@@ -1,14 +1,15 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './components/App/App';
+import './index.css';
 
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./components/App/App";
+// Створюємо елемент для порталу модального вікна, якщо він ще не існує
+const modalRoot = document.createElement('div');
+modalRoot.id = 'modal-root';
+document.body.appendChild(modalRoot);
 
-import "modern-normalize";
-import "./global.css";
-
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
