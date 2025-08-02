@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './components/App/App';
 import './index.css';
 
-// Створюємо елемент для порталу модального вікна, якщо він ще не існує
+
 const modalRoot = document.createElement('div');
 modalRoot.id = 'modal-root';
 document.body.appendChild(modalRoot);

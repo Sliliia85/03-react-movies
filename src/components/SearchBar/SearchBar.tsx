@@ -1,13 +1,13 @@
-import React, { FormEvent, useRef } from 'react';
+import type { FormEvent } from 'react';
+import { useRef } from 'react';
 import toast from 'react-hot-toast';
 import styles from './SearchBar.module.css';
 
-// Інтерфейс для пропсів компонента
 interface SearchBarProps {
   onSubmit: (query: string) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
+export default function SearchBar({ onSubmit }: SearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -52,4 +52,3 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
   );
 };
 
-export default SearchBar;

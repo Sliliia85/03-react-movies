@@ -3,15 +3,14 @@ import styles from './MovieGrid.module.css';
 import type { Movie } from '../../types/movie';
 import { getImageUrl } from '../../types/movieService';
 
-// Інтерфейс для пропсів компонента
+
 interface MovieGridProps {
   movies: Movie[];
   onSelect: (movie: Movie) => void;
 }
 
-import React from 'react';
 
-const MovieGrid: React.FC<MovieGridProps> = ({ movies, onSelect }) => {
+export default function MovieGrid({ movies, onSelect }: MovieGridProps) {
   return (
     <ul className={styles.grid}>
       {movies.map(movie => (
@@ -29,8 +28,7 @@ const MovieGrid: React.FC<MovieGridProps> = ({ movies, onSelect }) => {
       ))}
     </ul>
   );
-};
+}
 
-export default MovieGrid;
 
 

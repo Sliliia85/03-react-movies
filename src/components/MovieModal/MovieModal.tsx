@@ -1,10 +1,11 @@
+
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './MovieModal.module.css';
-import  type { Movie } from '../../types/movie';
+import type { Movie } from '../../types/movie';
 import { getImageUrl } from '../../types/movieService';
 
-// Інтерфейс для пропсів компонента
+
 interface MovieModalProps {
   movie: Movie;
   onClose: () => void;
@@ -13,8 +14,9 @@ interface MovieModalProps {
 const modalRoot = document.getElementById('modal-root') as HTMLElement;
 const body = document.body;
 
-const MovieModal: React.FC<MovieModalProps> = ({ movie, onClose }) => {
-  // useEffect для обробки клавіші Esc та заборони скролінгу
+
+export default function MovieModal({ movie, onClose }: MovieModalProps) {
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -23,11 +25,11 @@ const MovieModal: React.FC<MovieModalProps> = ({ movie, onClose }) => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    body.style.overflow = 'hidden'; // Забороняємо скролінг
+    body.style.overflow = 'hidden'; 
     
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      body.style.overflow = 'unset'; // Повертаємо скролінг
+      body.style.overflow = 'unset'; 
     };
   }, [onClose]);
 
@@ -62,6 +64,4 @@ const MovieModal: React.FC<MovieModalProps> = ({ movie, onClose }) => {
     </div>,
     modalRoot
   );
-};
-
-export default MovieModal;
+}
