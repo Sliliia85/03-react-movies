@@ -4,7 +4,7 @@ import styles from './App.module.css';
 
 
 import type { Movie } from '../../types/movie';
-import { fetchMovies } from '../../types/movieService';
+import { fetchMovies } from '../../services/movieService';
 
 import SearchBar from '../SearchBar/SearchBar';
 import MovieGrid from '../MovieGrid/MovieGrid';

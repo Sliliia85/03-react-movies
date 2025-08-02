@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './MovieModal.module.css';
 import type { Movie } from '../../types/movie';
-import { getImageUrl } from '../../types/movieService';
+import { getImageUrl } from '../../services/movieService';
 
 
 interface MovieModalProps {
