@@ -1,12 +1,20 @@
 import axios from 'axios';
-import type { ApiResponse, Movie } from '../types/movie';
+import  type { Movie } from '../types/movie';
+
+
+export interface ApiResponse {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+}
 
 
 const TMDB_TOKEN = import.meta.env.VITE_TMDB_TOKEN;
 
+
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/';
-
 
 interface FetchMoviesParams {
   query: string;
